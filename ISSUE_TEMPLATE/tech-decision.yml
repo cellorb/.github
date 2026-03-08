@@ -1,0 +1,80 @@
+name: Tech Decision
+description: ライブラリ導入・アーキテクチャ・インフラサービスなど技術的な意思決定を記録する
+title: "[TechDecision] "
+labels:
+  - tech-decision
+body:
+  - type: textarea
+    id: decision_subject
+    attributes:
+      label: 決定事項
+      placeholder: |
+        例：認証ライブラリを何にするか
+        例：キャッシュ層にRedisを使うかどうか
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+      placeholder: |
+        例：現状はXXXで対応しているが、YYYという問題が発生している
+        例：新機能の実装前にアーキを固める必要がある
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 制約条件
+      placeholder: |
+        - コスト：月$XXX以内
+        - 既存スタック：Go / PostgreSQL / AWS
+        - チームのスキル：XXXは経験なし
+    validations:
+      required: false
+
+  - type: textarea
+    id: options
+    attributes:
+      label: 選定候補と比較
+      description: コスト・運用負荷・学習コスト・実績などの評価軸で比較する
+      placeholder: |
+        候補A（XXX）: メリット〇〇、デメリット〇〇
+        候補B（YYY）: メリット〇〇、デメリット〇〇
+        現状維持: メリット〇〇、デメリット〇〇
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: 決定結果
+      description: 決定後に更新。却下した候補と理由も記録する。
+      placeholder: |
+        選択：候補A（XXX）
+        理由：〇〇という制約を満たす中で最も〇〇だったため
+        却下：候補Bは〇〇の観点で不採用
+    validations:
+      required: false
+
+  - type: textarea
+    id: next_actions
+    attributes:
+      label: 次のアクション
+      placeholder: |
+        - [ ] #xxx XXXの導入・初期設定
+        - [ ] #xxx 既存コードの移行
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: 完了条件
+      placeholder: |
+        - [ ] 決定結果と却下理由が記録されている
+        - [ ] 次のアクションIssueが作成されている
+    validations:
+      required: true

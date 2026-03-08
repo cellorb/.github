@@ -4,18 +4,11 @@ title: "[Feature] "
 labels:
   - feature
 body:
-  - type: markdown
-    attributes:
-      value: |
-        機能実装の要件・概要をまとめるテンプレートです。実装タスクはサブIssueに分解してください。
-
   - type: textarea
     id: overview
     attributes:
       label: 概要
-      description: この機能が何をするものか、なぜ必要かを記載してください
-      placeholder: |
-        例: ユーザーがXXXできるようにする。現状はYYYという問題がある。
+      placeholder: 例：ユーザーがXXXできるようにする。現状はYYYという問題がある。
     validations:
       required: true
 
@@ -23,7 +16,6 @@ body:
     id: requirements
     attributes:
       label: 要件
-      description: 満たすべき要件をリストアップしてください
       placeholder: |
         - ユーザーはXXXできる
         - XXXした場合はYYYが表示される
@@ -35,11 +27,21 @@ body:
     id: scope
     attributes:
       label: 影響範囲
-      description: 変更が及ぶサービス・ファイル・APIなどを記載してください
       placeholder: |
         - rest-api: XXXエンドポイント追加
         - front-api: YYYのBFF対応
-        - e2e-app: ZZZシナリオ追加
+    validations:
+      required: false
+
+  - type: textarea
+    id: sub_issues
+    attributes:
+      label: サブIssue
+      description: 作成後に更新可
+      placeholder: |
+        - [ ] #xxx REST APIエンドポイント実装
+        - [ ] #xxx BFF実装
+        - [ ] #xxx フロントエンド実装
     validations:
       required: false
 
@@ -47,22 +49,9 @@ body:
     id: done_criteria
     attributes:
       label: 完了条件
-      description: このIssueをCloseできる条件をチェックリストで記載してください
       placeholder: |
         - [ ] サブIssueがすべてClose済み
         - [ ] E2Eテストが通る
         - [ ] ドキュメント更新済み
     validations:
       required: true
-
-  - type: textarea
-    id: sub_issues
-    attributes:
-      label: サブIssue
-      description: 実装タスクをサブIssueに分解して列挙してください（作成後に更新可）
-      placeholder: |
-        - [ ] #xxx REST APIエンドポイント実装
-        - [ ] #xxx BFF実装
-        - [ ] #xxx フロントエンド実装
-    validations:
-      required: false
