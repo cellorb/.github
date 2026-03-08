@@ -1,0 +1,56 @@
+name: Architecture / Tech Task
+description: BFF/RESTの設計課題・未解決事項を管理する
+title: "[TechTask] "
+labels:
+  - tech-task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        BFF/REST間の設計課題や未完了タスクを記録するテンプレートです。
+
+  - type: textarea
+    id: current_state
+    attributes:
+      label: 現状
+      description: 何が起きているか、どこが未実装かを具体的に記載してください
+      placeholder: |
+        例: rest-api/internal/server/middleware/auth.go の InternalAuth が no-op
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: やるべきこと
+      description: 実装方針や案を列挙してください
+      placeholder: |
+        - 案1: 共有シークレット方式
+        - 案2: JWTベース方式
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影響範囲
+      description: 変更対象ファイル・サービス・設定を記載してください
+      placeholder: |
+        - rest-api/internal/server/middleware/auth.go
+        - front-api/internal/driver/restapi/client.go
+        - front-api/internal/config
+        - rest-api/internal/config
+    validations:
+      required: true
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: 完了条件
+      description: このIssueをCloseできる条件をチェックリストで記載してください
+      placeholder: |
+        - [ ] InternalAuthでトークン検証が行われる
+        - [ ] BFFから認証ヘッダーが付与される
+        - [ ] テスト追加とドキュメント更新
+    validations:
+      required: true

@@ -1,0 +1,64 @@
+name: Bug Report
+description: バグ報告・修正依頼のテンプレート
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグ報告のテンプレートです。再現手順を具体的に記載してください。
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: バグを再現するための手順を記載してください
+      placeholder: |
+        1. XXXページを開く
+        2. YYYボタンを押す
+        3. ZZZと表示される
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動作
+      description: 本来どうなるべきかを記載してください
+      placeholder: |
+        例: ZZZではなくAAAが表示されるべき
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作
+      description: 実際に何が起きているかを記載してください（エラーメッセージやスクショがあれば添付）
+      placeholder: |
+        例: 500エラーが返る / 画面が真っ白になる
+    validations:
+      required: true
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: 原因・調査メモ
+      description: 原因が分かっている場合や調査したことがあれば記載してください
+      placeholder: |
+        例: XXXのバリデーションが抜けている
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: 完了条件
+      description: このIssueをCloseできる条件をチェックリストで記載してください
+      placeholder: |
+        - [ ] バグが修正されている
+        - [ ] 再現テスト追加済み
+        - [ ] PRマージ済み
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Architecture docs (legacy)
+    url: https://github.com/cellorb/cellorb-plat-apps/tree/main/docs/issues
+    about: 過去のローカル管理Issue（参照用）

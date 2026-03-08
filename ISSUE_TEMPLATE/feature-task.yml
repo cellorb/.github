@@ -1,0 +1,53 @@
+name: Feature Task
+description: Feature Issueに紐づくサブIssue（実装タスク単位）
+title: "[Task] "
+labels:
+  - task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature Issueに紐づく実装タスクのテンプレートです。1タスク1PRを原則とします。
+
+  - type: input
+    id: parent_issue
+    attributes:
+      label: 親Issue
+      description: 対応するFeature IssueのURLまたは番号を記載してください
+      placeholder: "#xxx"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: やること
+      description: このタスクで実装・対応する内容を具体的に記載してください
+      placeholder: |
+        例: rest-api に POST /xxx エンドポイントを追加する
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: 実装方針
+      description: どのように実装するかの方針・設計メモを記載してください
+      placeholder: |
+        - XXXパッケージにハンドラを追加
+        - バリデーションはYYYで行う
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: 完了条件
+      description: このIssueをCloseできる条件をチェックリストで記載してください
+      placeholder: |
+        - [ ] 実装完了
+        - [ ] テスト追加・パス
+        - [ ] lintパス
+        - [ ] PRマージ済み
+    validations:
+      required: true
